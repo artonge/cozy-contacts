@@ -22,7 +22,7 @@ const ContactsApp = props => {
   const { t } = useI18n()
   const { isMobile } = useBreakpoints()
   const { BarCenter } = cozy.bar
-  const { cleanTrashedGroups } = props
+  const { cleanTrashedGroups, appName } = props
 
   useEffect(() => {
     cleanTrashedGroups()
@@ -34,7 +34,7 @@ const ContactsApp = props => {
         {isMobile && (
           <BarCenter>
             <MuiCozyTheme>
-              <Typography variant="h4">Contacts</Typography>
+              <Typography variant="h4">{appName}</Typography>
             </MuiCozyTheme>
           </BarCenter>
         )}

@@ -16,7 +16,7 @@ import { SelectedGroupProvider } from '../../components/Contexts/SelectedGroup'
 import { SearchProvider } from '../../components/Contexts/Search'
 
 const init = () => {
-  const { root, store, client, lang, polyglot } = setupApp()
+  const { root, store, client, lang, polyglot, appName } = setupApp()
 
   render(
     <Provider store={store}>
@@ -26,7 +26,7 @@ const init = () => {
             <BreakpointsProvider>
               <SelectedGroupProvider>
                 <SearchProvider>
-                  <App />
+                  <App appName={appName} />
                 </SearchProvider>
               </SelectedGroupProvider>
             </BreakpointsProvider>
