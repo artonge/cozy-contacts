@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { useI18n } from 'cozy-ui/transpiled/react/I18n'
+import { Table } from 'cozy-ui/transpiled/react/Table'
 
 import ContactHeaderRow from './ContactHeaderRow'
 import ContactsSubList from './ContactsSubList'
@@ -12,14 +13,14 @@ const CategorizedList = ({ contacts }) => {
   const categorizedContacts = categorizeContacts(contacts, t('empty-list'))
 
   return (
-    <ol className="list-contact">
+    <Table className="u-nolist">
       {Object.entries(categorizedContacts).map(([header, contacts]) => (
         <li key={`cat-${header}`}>
           <ContactHeaderRow key={header} header={header} />
           <ContactsSubList contacts={contacts} />
         </li>
       ))}
-    </ol>
+    </Table>
   )
 }
 

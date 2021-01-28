@@ -5,10 +5,15 @@ import ContactRow from './ContactRow'
 
 const ContactsSubList = ({ contacts }) => {
   return (
-    <ol className="sublist-contact">
-      {contacts.map(contact => (
+    <ol className="u-m-0 u-pl-0 u-nolist">
+      {contacts.map((contact, index) => (
         <li key={`contact-${contact._id}`}>
-          <ContactRow id={contact._id} key={contact._id} contact={contact} />
+          <ContactRow
+            style={index === contacts.length - 1 ? { borderBottom: 0 } : null}
+            id={contact._id}
+            key={contact._id}
+            contact={contact}
+          />
         </li>
       ))}
     </ol>

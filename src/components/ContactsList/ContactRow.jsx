@@ -52,6 +52,7 @@ class ContactRow extends Component {
     const {
       contact,
       showModal,
+      style,
       breakpoints: { isMobile }
     } = this.props
     const email = getPrimaryEmail(contact) || undefined
@@ -60,6 +61,7 @@ class ContactRow extends Component {
 
     return (
       <TableRow
+        style={style}
         className="contact"
         data-testid="contact-row"
         onClick={() => showModal(<ContactCardModal id={contact._id} />)}
@@ -76,7 +78,8 @@ class ContactRow extends Component {
 
 ContactRow.propTypes = {
   contact: fullContactPropTypes.isRequired,
-  showModal: PropTypes.func.isRequired
+  showModal: PropTypes.func.isRequired,
+  style: PropTypes.object
 }
 ContactRow.defaultProps = {
   selection: null

@@ -1,15 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Table } from 'cozy-ui/transpiled/react/Table'
+
 import ContactsSubList from './ContactsSubList'
 
 const UncategorizedList = ({ contacts }) => {
   return (
-    <ol className="list-contact">
+    <Table className="u-nolist">
       <li key="no-category">
         <ContactsSubList contacts={contacts} />
       </li>
-    </ol>
+    </Table>
   )
 }
 
